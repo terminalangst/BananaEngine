@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Tex-Packer-EX v0.6.8 https://strawberrysage.github.io/tex-packer-ex
+-->
+<TextureAtlas imagePath="logoBumpin.png" width="1845" height="862">
+  <SubTexture name="logo bumpin0000.png" x="716" y="435"  width="687" height="427" frameX="-137" frameY="-120" frameWidth="939" frameHeight="703"/>
+  <SubTexture name="logo bumpin0001.png" x="0" y="0"  width="716" height="448" frameX="-120" frameY="-109" frameWidth="939" frameHeight="703"/>
+  <SubTexture name="logo bumpin0002.png" x="0" y="0"  width="716" height="448" frameX="-120" frameY="-109" frameWidth="939" frameHeight="703"/>
+  <SubTexture name="logo bumpin0003.png" x="716" y="0"  width="698" height="435" frameX="-130" frameY="-116" frameWidth="939" frameHeight="703"/>
+  <SubTexture name="logo bumpin0004.png" x="716" y="0"  width="698" height="435" frameX="-130" frameY="-116" frameWidth="939" frameHeight="703"/>
+  <SubTexture name="logo bumpin0005.png" x="1414" y="0" width="431" height="692" rotated="true"  frameX="-133" frameY="-118" frameWidth="939" frameHeight="703"/>
+  <SubTexture name="logo bumpin0006.png" x="1414" y="0" width="431" height="692" rotated="true"  frameX="-133" frameY="-118" frameWidth="939" frameHeight="703"/>
+  <SubTexture name="logo bumpin0007.png" x="1414" y="0" width="431" height="692" rotated="true"  frameX="-133" frameY="-118" frameWidth="939" frameHeight="703"/>
+  <SubTexture name="logo bumpin0008.png" x="1414" y="0" width="431" height="692" rotated="true"  frameX="-133" frameY="-118" frameWidth="939" frameHeight="703"/>
+  <SubTexture name="logo bumpin0009.png" x="1414" y="0" width="431" height="692" rotated="true"  frameX="-133" frameY="-118" frameWidth="939" frameHeight="703"/>
+  <SubTexture name="logo bumpin0010.png" x="1414" y="0" width="431" height="692" rotated="true"  frameX="-133" frameY="-118" frameWidth="939" frameHeight="703"/>
+  <SubTexture name="logo bumpin0011.png" x="1414" y="0" width="431" height="692" rotated="true"  frameX="-133" frameY="-118" frameWidth="939" frameHeight="703"/>
+  <SubTexture name="logo bumpin0012.png" x="1414" y="0" width="431" height="692" rotated="true"  frameX="-133" frameY="-118" frameWidth="939" frameHeight="703"/>
+  <SubTexture name="logo bumpin0013.png" x="1414" y="0" width="431" height="692" rotated="true"  frameX="-133" frameY="-118" frameWidth="939" frameHeight="703"/>
+  <SubTexture name="logo bumpin0014.png" x="1414" y="0" width="431" height="692" rotated="true"  frameX="-133" frameY="-118" frameWidth="939" frameHeight="703"/>
+</TextureAtlas>
