@@ -8,7 +8,7 @@ Check the [instructions here](docs/COMPILING.md).
 
 ## Fork Credits / Special Thanks
 * [Terminalangst](https://x.com/terminalangst) - Main and only programmer of Banana.
-* [WithBolognese](https://x.com/withbolognese) - Main branding artist.
+* withbolognese - Main branding artist.
 ---
 * [FixedData / Data5](https://x.com/_data5) - Giving me a bit of motivation to pick this project up again after 5 months.
 * [Psych Engine](https://github.com/ShadowMario/FNF-PsychEngine) - Fork's base engine.
