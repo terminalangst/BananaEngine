@@ -27,7 +27,7 @@ class FPSCounter extends TextField {
         multiline = true;
 
         defaultTextFormat = new TextFormat("tahoma.ttf", 14, col);
-        text = 'FPS: ';
+        text = '0 FPS || 0MB / 0MB';
 
         times = [];
     }

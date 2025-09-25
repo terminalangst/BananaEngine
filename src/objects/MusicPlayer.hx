@@ -92,9 +92,9 @@ class MusicPlayer extends FlxGroup
 
 		var songName:String = instance.songs[FreeplayState.curSelected].songName;
 		if (playing && !wasPlaying)
-			songTxt.text = Language.getPhrase('musicplayer_playing', 'PLAYING: {1}', [songName]);
+			songTxt.text = 'PLAYING: ' + songName;
 		else
-			songTxt.text = Language.getPhrase('musicplayer_paused', 'PLAYING: {1} (PAUSED)', [songName]);
+			songTxt.text = 'PLAYING: ' + songName +  '(PAUSED)';
 
 		//if(FlxG.keys.justPressed.K) trace('Time: ${FreeplayState.vocals.time}, Playing: ${FreeplayState.vocals.playing}');
 
@@ -259,7 +259,7 @@ class MusicPlayer extends FlxGroup
 
 		if (playingMusic)
 		{
-			instance.bottomText.text = Language.getPhrase('musicplayer_tip', 'Press SPACE to Pause / Press ESCAPE to Exit / Press R to Reset the Song');
+			instance.bottomText.text = 'Press SPACE to Pause / Press ESCAPE to Exit / Press R to Reset the Song';
 			positionSong();
 			
 			progressBar.setRange(0, FlxG.sound.music.length);

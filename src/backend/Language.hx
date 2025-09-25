@@ -50,7 +50,8 @@ class Language
 		if(pngPos > -1) alphaPath = alphaPath.substring(0, pngPos);
 		AlphaCharacter.loadAlphabetData(alphaPath);
 		#else
-		AlphaCharacter.loadAlphabetData();
+		//AlphaCharacter.loadAlphabetData();
+		trace('penis');
 		#end
 	}
 
