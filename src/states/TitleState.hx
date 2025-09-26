@@ -26,6 +26,12 @@ class TitleState extends MusicBeatState {
     var titleText:FlxSprite;
     var ngSpr:FlxSprite;
 
+    // all this is related to titleEnter.png btw LMAOOOO
+    var newTitle:Bool = false;
+    var tTimer:Float = 0;
+    var textCol:Array<FlxColor> = [0xFF33FFFF, 0xFF3333CC];
+    var textAlpha:Array<Float> = [1, .64];
+
     override public function create():Void {
         Paths.clearStoredMemory();
         Paths.clearUnusedMemory();
@@ -57,8 +63,8 @@ class TitleState extends MusicBeatState {
 
         add(titleText = new FlxSprite(100, 576));
         titleText.frames = Paths.getSparrowAtlas('titleEnter');
-        titleText.animation.addByPrefix('idle', 'Press Enter to Begin', 24);
-        titleText.animation.addByPrefix('press', 'ENTER PRESSED', 24);
+        titleText.animation.addByPrefix('idle', 'ENTER IDLE', 24);
+        titleText.animation.addByPrefix('press', ClientPrefs.data.flashing ? 'ENTER PRESSED' : 'ENTER FREEZE', 24);
         titleText.animation.play('idle');
         titleText.updateHitbox();
 
@@ -81,11 +87,26 @@ class TitleState extends MusicBeatState {
         final pressedEnter:Bool = FlxG.gamepads.lastActive?.justPressed.START || FlxG.keys.justPressed.ENTER || controls.ACCEPT;
         if (FlxG.sound.music != null) Conductor.songPosition = FlxG.sound.music.time;
 
-        if (!transitioning && skippedIntro) {
+        if (initialized && !transitioning && skippedIntro) {
+
+            if (newTitle && !pressedEnter) {
+                tTimer += FlxMath.bound(elapsed, 0, 1);
+                if(tTimer > 2) tTimer -= 2;
+                
+                var timer:Float = tTimer;
+                if (timer >= 1) timer = (-timer) + 2;
+                timer = FlxEase.quadInOut(timer);
+
+                titleText.color = FlxColor.interpolate(textCol[0], textCol[1], timer);
+                titleText.alpha = FlxMath.lerp(textAlpha[0], textAlpha[1], timer);
+            }
+
             if (pressedEnter) {
                 FlxG.camera.flash(ClientPrefs.data.flashing ? FlxColor.WHITE : 0x4CFFFFFF, 1);
                 transitioning = true;
 
+                titleText.color = FlxColor.WHITE;
+                titleText.alpha = 1;
                 if (titleText != null) titleText.animation.play('press');
                 FlxG.sound.play(Paths.sound('confirmMenu'), 0.7);
 
@@ -151,13 +172,13 @@ class TitleState extends MusicBeatState {
                     FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
                     FlxG.sound.music.fadeIn(4, 0, 0.7);
                 case 2:
-                    createCoolText(['The Funkin Crew'], 40);
+                    createCoolText(['The Funkin Crew Inc'], 40);
                 case 4:
                     addMoreText('presents', 40);
                 case 5:
                     deleteCoolText();
                 case 6:
-                    createCoolText(['(NOT) Associated with'], -40);
+                    createCoolText(['In association with'], -40);
                 case 8:
                     addMoreText('Newgrounds', -40);
                     ngSpr.visible = true;
@@ -185,6 +206,8 @@ class TitleState extends MusicBeatState {
     function skipIntro() {
         if(!skippedIntro) {
             remove(textGroup);
+            ngSpr.destroy();
+            newTitle = true;
             logo.alpha = girlfriend.alpha = titleText.alpha = 1;
 
             FlxG.camera.flash(ClientPrefs.data.flashing ? FlxColor.WHITE : 0x4CFFFFFF, 1);

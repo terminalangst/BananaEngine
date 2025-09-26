@@ -1,5 +1,7 @@
 package;
 
+/** MMM, BANANA! **/
+
 import flixel.FlxG;
 
 class Init extends MusicBeatState {

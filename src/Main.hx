@@ -49,6 +49,11 @@ import backend.Highscore;
 // // // // // // // // //
 class Main extends Sprite
 {
+	// versions (highkey hella inspired from NMV)
+	public static final psychVersion = '1.0.4';
+	public static final bananaVersion = '0.1.0';
+	public static final funkinVersion = '0.2.8'; // shadowmario what r we doin
+	
 	public static final game = {
 		width: 1280, // WINDOW width
 		height: 720, // WINDOW height
