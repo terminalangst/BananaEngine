@@ -7,7 +7,6 @@ import openfl.Assets;
 
 // engine imports
 import shaders.ColorSwap;
-import objects.Alphabet;
 
 class TitleState extends MusicBeatState {
     public static var initialized:Bool = false;
@@ -185,7 +184,7 @@ class TitleState extends MusicBeatState {
 
     function skipIntro() {
         if(!skippedIntro) {
-            textGroup.destroy();
+            remove(textGroup);
             logo.alpha = girlfriend.alpha = titleText.alpha = 1;
 
             FlxG.camera.flash(ClientPrefs.data.flashing ? FlxColor.WHITE : 0x4CFFFFFF, 1);

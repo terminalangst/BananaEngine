@@ -6,7 +6,6 @@ class Init extends MusicBeatState {
     override public function create() {
         // Why were these even in TitleState of all places dude.
         ClientPrefs.loadPrefs();
-        Language.reloadPhrases();
         AlphaCharacter.loadAlphabetData();
         if (FlxG.save.data.fullscreen != null) FlxG.fullscreen = FlxG.save.data.fullscreen;
         if (FlxG.save.data.weekCompleted != null) states.StoryMenuState.weekCompleted = FlxG.save.data.weekCompleted;
